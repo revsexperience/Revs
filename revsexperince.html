@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Esperienza Interattiva</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .sticky-text {
+      position: sticky;
+      top: 20vh;
+      transition: transform 0.3s ease-out;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transition: opacity 1s ease-in;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+  <!-- Scritta centrale parallax -->
+  <div class="h-[300vh] relative">
+    <h1 id="central-text" class="sticky-text text-5xl text-center mt-40 font-bold">
+      SS NASA
+    </h1>
+  </div>
+
+  <!-- Immagini che appaiono con click -->
+  <div class="flex flex-col items-center space-y-12 pb-40">
+    <button onclick="showImage('img1')" class="text-white border px-4 py-2">Mostra Immagine 1</button>
+    <img id="img1" src="immagini/pexels-eberhardgross-1366919.jpg" class="w-2/3 fade-in rounded-2xl shadow-xl" />
+
+    <button onclick="showImage('img2')" class="text-white border px-4 py-2">Mostra Immagine 2</button>
+    <img id="img2" src="immagini/pexels-kasuma-908644.jpg" class="w-2/3 fade-in rounded-2xl shadow-xl" />
+  </div>
+
+  <!-- Sezione finale -->
+  <div class="relative h-screen">
+    <img src="img/finale.jpg" class="absolute inset-0 w-full h-full object-cover z-0" id="final-image" />
+    <div id="final-text" class="absolute inset-0 flex items-center justify-center z-10">
+      <h2 class="text-4xl font-bold px-6 py-3 bg-black/30 backdrop-blur-md transition-colors duration-500" id="dynamic-text">
+        LA VETTA È DENTRO DI TE
+      </h2>
+    </div>
+  </div>
+
+  <script>
+    function showImage(id) {
+      document.getElementById(id).classList.add('visible');
+    }
+
+    const centralText = document.getElementById('central-text');
+    window.addEventListener('scroll', () => {
+      const offset = window.scrollY;
+      if (offset < 400) {
+        centralText.style.transform = `translateY(${offset / 10}px)`;
+      } else {
+        centralText.style.transform = `translateY(40px)`;
+      }
+    });
+
+    const finalText = document.getElementById('dynamic-text');
+    window.addEventListener('scroll', () => {
+      const rect = finalText.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        finalText.style.color = '#ffe600';
+      } else {
+        finalText.style.color = '#ffffff';
+      }
+    });
+  </script>
+
+</body>
+</html>
