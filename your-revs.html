@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Revs - REVS</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font moderno Raleway per tutto -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <style>
+    body.social-page {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      color: #fff;
+      background: transparent;
+      overflow-x: hidden;
+      padding-top: 80px; /* spazio navbar */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body.social-page .navbar {
+      background: transparent;
+      position: fixed;
+      top: 20px;
+      width: 100%;
+      z-index: 10000;
+    }
+
+    .hero-bg {
+      position: fixed; /* full screen background */
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('immagini/pexels-simon73-1323550.jpg') no-repeat center center/cover;
+      z-index: -1;
+    }
+
+    .content-wrapper {
+      margin-top: 100px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 20px;
+      color: white;
+      text-shadow: 0 0 8px rgba(0,0,0,0.7);
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
+    }
+
+    .content-wrapper h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: transparent;
+    }
+
+    /* FORM STYLE */
+    form.your-revs-form {
+  width: 100%;
+  background: transparent;
+  padding: 2rem;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+    
+
+    form.your-revs-form label {
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+      color: #fffbfa;
+    }
+
+    form.your-revs-form input[type="email"],
+    form.your-revs-form input[type="url"],
+    form.your-revs-form textarea,
+    form.your-revs-form input[type="file"] {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      background-color: transparent;
+      color: #eee;
+      resize: vertical;
+      transition: background-color 0.3s ease;
+    }
+
+    form.your-revs-form input[type="email"]:focus,
+    form.your-revs-form input[type="url"]:focus,
+    form.your-revs-form textarea:focus,
+    form.your-revs-form input[type="file"]:focus {
+      outline: none;
+      background-color: #333;
+      box-shadow: 0 0 8px #e2dcdb;
+    }
+
+    form.your-revs-form textarea {
+      min-height: 120px;
+    }
+
+    form.your-revs-form button[type="submit"] {
+      margin-top: 1.8rem;
+      width: 100%;
+      padding: 0.9rem 0;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(90deg, #ff7e5f, #feb47b);
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #121212;
+      cursor: pointer;
+      transition: background 0.4s ease;
+    }
+
+    form.your-revs-form button[type="submit"]:hover {
+      background: linear-gradient(90deg, #feb47b, #ff7e5f);
+    }
+
+    /* Footer social */
+    .site-footer {
+      background: transparent;
+      text-align: center;
+      padding: 20px 0;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .site-footer.social-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .site-footer.social-center .social-links {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .site-footer .social-links a {
+      margin: 0 15px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.3rem;
+      transition: color 0.3s ease;
+    }
+
+    .site-footer .social-links a:hover {
+      color: #f39c12; /* colore hover */
+    }
+  </style>
+</head>
+<body class="social-page">
+
+  <!-- Navbar identica a index -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="Revs.html">REVS</a></li>
+      <li><a href="your-revs.html" class="active">Your Revs</a></li>
+      <li><a href="who-we-are.html">Who we are</a></li>
+     </ul>
+  </nav>
+
+  <!-- Sfondo full screen -->
+  <section class="hero-bg"></section>
+
+  <!-- Contenuto principale con form -->
+  <div class="content-wrapper">
+    <h1> </h1>
+    <form id="yourRevsForm" method="post" enctype="multipart/form-data" class="your-revs-form">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Your email" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+      <label for="fileUpload">Upload file (optional):</label>
+      <input type="file" id="fileUpload" name="fileUpload" accept=".mp3,.wav,.flac,.zip,.rar" />
+
+      <label for="link">Or share a link (optional):</label>
+      <input type="url" id="link" name="link" placeholder="https://example.com" />
+
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <!-- Footer social centrati -->
+  <footer class="site-footer social-center">
+    <div class="social-links">
+      <a href="https://www.instagram.com/andrewlakesmusic/" target="_blank" rel="noopener noreferrer">Andrej Garelli</a>
+      <a href="https://www.instagram.com/michelangeloeinaudi/" target="_blank" rel="noopener noreferrer">Michelangelo Einaudi</a>
+    </div>
+  </footer>
+
+</body>
+</html>
