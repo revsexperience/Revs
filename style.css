@@ -1,0 +1,335 @@
+/* Import font moderno Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+/* --- NAVBAR --- */
+.navbar {
+  position: fixed;
+  top: 20px;
+  width: 100%;
+  background: transparent;
+  padding: 20px 0;
+  z-index: 10000;
+  font-family: 'Poppins', sans-serif;
+  user-select: none;
+  animation: navbarFadeIn 1s ease forwards;
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  gap: 50px;
+}
+
+.navbar ul li a {
+  color: #fff;
+  font-size: 1.8rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a:focus {
+  color: #ffcc00;
+  outline: none;
+}
+
+@keyframes navbarFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Corpo pagina */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+  color: #f6f6f6;
+  text-align: center;
+  padding-top: 80px; /* spazio navbar */
+  overflow-x: hidden;
+}
+
+/* HERO con video */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.95);
+  padding: 100px 20px 50px;
+  background: transparent;
+}
+
+.overlay h1 {
+  font-size: 4em;
+  margin: 0;
+  font-weight: 700;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.overlay p {
+  font-size: 2em;
+  margin-top: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 2s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+ .site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;               /* Altezza fissa */
+  background-color: transparent;
+  color: #eee;
+  font-family: 'Arial', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 0 20px;
+  box-sizing: content-box;
+  z-index: 1000;
+
+  /* Flexbox per allineare i link in basso */
+  display: flex;
+  align-items: flex-end;      /* Allinea i link sul fondo del footer */
+
+  overflow-x: auto;           /* Scroll orizzontale se i link sono troppi */
+  white-space: nowrap;        /* Evita l'andare a capo */
+
+  scrollbar-width: thin;      /* Opzionale: scrollbar più sottile su Firefox */
+  scrollbar-color: #ffa500 #222; /* Colori scrollbar (thumb e track) su Firefox */
+}
+
+/* Per personalizzare scrollbar su Chrome, Edge e Safari */
+.site-footer::-webkit-scrollbar {
+  height: 6px;
+}
+.site-footer::-webkit-scrollbar-track {
+  background: #222;
+}
+.site-footer::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+/* Link */
+.site-footer .social-links a {
+  color: #ffa500;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: bold;
+  padding-bottom: 4px;
+  line-height: 1.2;
+  white-space: nowrap;
+  flex-shrink: 0; /* Non far rimpicciolire i link */
+}
+
+.site-footer .social-links a:hover {
+  color: #fff;
+}
+
+/* Evita che il contenuto della pagina venga coperto dal footer */
+body {
+  padding-bottom: 60px;
+}
+
+
+.glitch {
+  position: relative;
+  color: rgb(77, 28, 28);
+  font-size: 1em;
+  font-weight: bold;
+  animation: glitch 5s infinite;
+  margin-top: 10px;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  color: #06361f;
+  background: transparent;
+  clip: rect(0, 0, 0, 0);
+}
+
+.glitch::before {
+  animation: glitchTop 1.5s infinite linear;
+  color: #f0f;
+}
+
+.glitch::after {
+  animation: glitchBottom 1.5s infinite linear;
+  color: #0ff;
+}
+
+@keyframes glitch {
+  0% {
+    transform: none;
+  }
+  20% {
+    transform: skew(0.5deg);
+  }
+  40% {
+    transform: translate(1px, -1px);
+  }
+  60% {
+    transform: translate(-1px, 1px);
+  }
+  80% {
+    transform: skew(-0.5deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes glitchTop {
+  0% {
+    clip: rect(0, 9999px, 0, 0);
+  }
+  10% {
+    clip: rect(0, 9999px, 5px, 0);
+    transform: translate(-3px, -3px);
+  }
+  20% {
+    clip: rect(5px, 9999px, 10px, 0);
+    transform: translate(3px, -1px);
+  }
+  100% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: none;
+  }
+}
+
+@keyframes glitchBottom {
+  0% {
+    clip: rect(0, 9999px, 0, 0);
+  }
+  10% {
+    clip: rect(10px, 9999px, 15px, 0);
+    transform: translate(3px, 3px);
+  }
+  20% {
+    clip: rect(15px, 9999px, 20px, 0);
+    transform: translate(-3px, 1px);
+  }
+  100% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: none;
+  }
+}
+
+/* --- AUDIO PLAYER CON SOUNDBAR IN BASSO --- */
+.audio-player {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: transparent;
+  z-index: 10000;
+  pointer-events: auto;
+}
+
+.audio-player button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sound-bars {
+  display: flex;
+  gap: 5px;
+}
+
+.sound-bars span {
+  display: block;
+  width: 5px;
+  height: 20px;
+  background: #fff;
+  animation: soundBar 1s linear infinite paused;
+  border-radius: 2px;
+}
+
+@keyframes soundBar {
+  0%, 100% {
+    height: 5px;
+    opacity: 0.3;
+  }
+  50% {
+    height: 20px;
+    opacity: 1;
+  }
+}
+.poetic-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 100px 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.poetic-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Footer centrato solo su index.html */
+body.home-page .site-footer {
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  padding-bottom: 10px;
+}
+
+body.home-page .site-footer .social-links {
+  display: flex;
+  gap: 20px;
+}
+/* Cambia colore dei link social solo in home page */
+body.home-page .site-footer .social-links a {
+  color: #fbfffe; /* Scegli il colore che vuoi */
+}
+
+body.home-page .site-footer .social-links a:hover {
+  color: #ffffff; /* Colore al passaggio del mouse */
+}
