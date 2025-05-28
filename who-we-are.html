@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Social - REVS</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font moderno Raleway per tutto -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <style>
+    body.social-page {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      color: #fff;
+      background: #000;
+      overflow-x: hidden;
+      padding-top: 80px; /* spazio navbar */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body.social-page .navbar {
+      background: transparent;
+      position: fixed;
+      top: 20px;
+      width: 100%;
+      z-index: 10000;
+    }
+
+    .hero-bg {
+      position: fixed; /* full screen background */
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('immagini/nicosielg.jpg') no-repeat center center/cover;
+      z-index: -1;
+    }
+
+    .content-wrapper {
+      margin-top: 100px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 20px;
+      color: white;
+      text-shadow: 0 0 8px rgba(0,0,0,0.7);
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
+    }
+
+    .content-wrapper h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .scrollable-text {
+      flex: 1;
+      width: 100%;
+      max-height: 40vh;
+      overflow-y: auto;
+      background-color: transparent;
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    /* Footer social */
+    .site-footer {
+      background: transparent;
+      text-align: center;
+      padding: 20px 0;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    /* Solo su index o pagina social con social-center: centra i link */
+    .site-footer.social-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .site-footer.social-center .social-links {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .site-footer .social-links a {
+      margin: 0 15px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.3rem;
+      transition: color 0.3s ease;
+    }
+
+    .site-footer .social-links a:hover {
+      color: #f39c12; /* colore hover */
+    }
+  </style>
+</head>
+<body class="social-page">
+
+  <!-- Navbar identica a index -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="Revs.html">REVS</a></li>
+      <li><a href="your-revs.html">Your Revs</a></li>
+      <li><a href="who-we-are.html">Who we are</a></li>
+   </ul>
+  </nav>
+
+  <!-- Sfondo full screen -->
+  <section class="hero-bg"></section>
+
+  <!-- Contenuto titolo + testo scrollabile -->
+  <div class="content-wrapper">
+    <h1></h1>
+    <div class="scrollable-text">
+      <p>
+       Hello everyone,
+We’re two guys from Cuneo, Italy  . 
+We are Andrej Garelli and Michelangelo Einaudi,
+though we each compose differently, nature is our common muse.
+Our music is about feeling and emotion.
+With REVS, we want to give everyone the chance to share that experience.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer social centrati -->
+  <footer class="site-footer social-center">
+    <div class="social-links">
+      <a href="https://www.instagram.com/andrewlakesmusic/" target="_blank" rel="noopener noreferrer">Andrej Garelli </a>
+      <a href="https://www.instagram.com/michelangeloeinaudi/" target="_blank" rel="noopener noreferrer">Michelangelo Einaudi </a>
+    
+    </div>
+  </footer>
+
+</body>
+</html>
