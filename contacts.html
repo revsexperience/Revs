@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista Brani - REVS</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 100px 20px 40px;
+      font-family: 'Poppins', sans-serif;
+      background: url('immagini/pexels-fmaderebner-869258.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: transparent;
+    }
+
+    .track-list {
+      max-width: 800px;
+      margin: auto;
+      background: transparent;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: left;
+    }
+
+    .track-list h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .track {
+      font-size: 1.8rem;
+      margin: 15px 0;
+      padding: 15px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      transition: background 0.3s;
+    }
+
+    .track a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+    }
+
+    .track:hover {
+      background: transparent;
+    }
+  </style>
+<head>
+  <head>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+  <meta charset="UTF-8" />
+  <title>Il tuo sito</title>
+  <style>
+    /* Qui metti tutto il CSS */
+    .site-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #222;
+      color: #eee;
+      font-family: 'Arial', sans-serif;
+      padding: 10px 20px;
+      box-sizing: border-box;
+      z-index: 1000;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .site-footer .social-links a {
+      color: #ffa500;
+      text-decoration: none;
+      margin-right: 15px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .site-footer .social-links a:hover {
+      color: #fff;
+    }
+    body {
+      padding-bottom: 60px;
+    }
+  </style>
+</head>
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+   <nav class="navbar">
+  <!-- Freccia di ritorno alla home -->
+  
+  </div>
+
+  <ul>
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="revs.html">REVS</a></li>
+    <li><a href="your-revs.html">Your Revs</a></li>
+    <li><a href="who-we-are.html">Who we are</a></li>
+    <li><a href="contacts.html">Contacts</a></li>
+  </ul>
+</nav>
+  <div id="navbar-container"></div>
+
+  <div class="track-list">
+    <h2>Revs</h2>
+
+    <div class="track"><a href="revscape.html">Revscape</a></div>
+    <div class="track"><a href="Moonvalley.html">Moon Valley</a></div>
+    
+    <!-- Aggiungi qui altri brani -->
+  </div>
+
+  <!-- Carica la navbar -->
+  <script>
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar-container').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>
